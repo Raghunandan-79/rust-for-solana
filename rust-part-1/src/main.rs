@@ -63,6 +63,23 @@ fn main() {
     let str: String = String::from("Raghunandan");
     let len = get_length(&str);
     println!("{} {}", str, len);
+
+    // Assignments
+
+    /*
+        1. Borrowing an Immutable Reference
+        Goal: Write a function calculate_length that takes an immutable reference to a String and returns its length. Then call this function from main and print both the original String and its length.
+    */
+    let str: String = String::from("Raghu");
+    let (str, len) = calculate_length(str);
+    println!("Orinal String: {} and length: {}", str, len);
+
+    /* 
+        Goal: Write a function append_text that takes a mutable reference to a String and appends some text to it. For example, if the string is "Hello", the function could append ", World!".
+    */
+    let mut str: String = String::from("Hello");
+    append_text(&mut str);
+    println!("{}", str);
 }
 
 pub fn is_even(x: i32) -> bool {
@@ -85,4 +102,13 @@ pub fn get_first_name(str: String) -> String {
 fn get_length(str: &String) -> usize {
     let len = str.len();
     return len;
+}
+
+fn calculate_length(str: String) -> (String, usize) {
+    let len = str.len();
+    return (str, len);
+}
+
+fn append_text(str: &mut String) {
+    str.push_str(", World!");
 }
