@@ -43,8 +43,10 @@ fn main() {
     println!("{:?}", xs);
 
     println!();
+    
+    // Conditionals and Loops
     println!("Conditionals and Loops");
-    let x: i32 =  99;
+    let x: i32 = 99;
     if is_even(x) {
         println!("{} is even", x);
     } else {
@@ -53,6 +55,14 @@ fn main() {
 
     let str: String = String::from("Raghunadan Sharma");
     println!("First name: {}", get_first_name(str));
+
+    println!();
+
+    // Borrowing and References
+    println!("Borrowing and References");
+    let str: String = String::from("Raghunandan");
+    let len = get_length(&str);
+    println!("{} {}", str, len);
 }
 
 pub fn is_even(x: i32) -> bool {
@@ -61,7 +71,7 @@ pub fn is_even(x: i32) -> bool {
 
 pub fn get_first_name(str: String) -> String {
     let mut first_name: String = String::from("");
-    
+
     for c in str.chars() {
         if c == ' ' {
             break;
@@ -70,4 +80,9 @@ pub fn get_first_name(str: String) -> String {
     }
 
     return first_name;
+}
+
+fn get_length(str: &String) -> usize {
+    let len = str.len();
+    return len;
 }
