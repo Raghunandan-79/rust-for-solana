@@ -40,4 +40,5 @@ fn main() {
     println!("{}", xs.len());
     xs.push(4);
     println!("{}", xs.len());
+    println!("{:?}", xs);
 }
