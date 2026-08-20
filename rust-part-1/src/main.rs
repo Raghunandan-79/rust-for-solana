@@ -41,4 +41,33 @@ fn main() {
     xs.push(4);
     println!("{}", xs.len());
     println!("{:?}", xs);
+
+    println!();
+    println!("Conditionals and Loops");
+    let x: i32 =  99;
+    if is_even(x) {
+        println!("{} is even", x);
+    } else {
+        println!("{} is odd", x);
+    }
+
+    let str: String = String::from("Raghunadan Sharma");
+    println!("First name: {}", get_first_name(str));
+}
+
+pub fn is_even(x: i32) -> bool {
+    return x % 2 == 0;
+}
+
+pub fn get_first_name(str: String) -> String {
+    let mut first_name: String = String::from("");
+    
+    for c in str.chars() {
+        if c == ' ' {
+            break;
+        }
+        first_name.push(c);
+    }
+
+    return first_name;
 }
