@@ -177,5 +177,3 @@ fn find_first_a(s: String) -> Option<i32> {
 
     return Option::None;
 }
-
-
